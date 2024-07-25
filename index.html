@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="AnginInfo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <form id="calcForm">
+            <label for="num1">Número 1:</label>
+            <input type="number" id="num1" step="any" required>
+
+            <label for="num2">Número 2:</label>
+            <input type="number" id="num2" step="any" required>
+
+            <div class="buttons">
+                <button type="button" onclick="calculate('add')">+</button>
+                <button type="button" onclick="calculate('subtract')">-</button>
+                <button type="button" onclick="calculate('multiply')">*</button>
+                <button type="button" onclick="calculate('divide')">/</button>
+                <button type="button" onclick="calculate('power')">^</button>
+                <button type="button" onclick="calculate('sqrt')">√</button>
+                <button type="button" onclick="calculate('modulus')">%</button>
+                <button type="button" onclick="calculate()">Calcular</button>
+            </div>
+        </form>
+        <div id="result">Resultado: </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
