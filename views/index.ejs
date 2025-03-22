@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerador e Validador de CPF</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .container { background: #f0f0f0; padding: 20px; border-radius: 10px; }
+        .resultado { margin-top: 20px; padding: 10px; border-radius: 5px; }
+        .valido { background: #d4edda; color: #155724; }
+        .invalido { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador e Validador de CPF</h1>
+        
+        <form action="/validar" method="POST">
+            <label>Digite um CPF para validar:</label>
+            <input type="text" name="cpf" placeholder="000.000.000-00" required>
+            <button type="submit">Validar</button>
+        </form>
+
+
+        <form action="/gerar" method="POST">
+            <button type="submit">Gerar CPF Válido</button>
+        </form>
+
+        <% if (resultado) { %>
+            <div class="resultado <%= resultado === 'Válido' ? 'valido' : 'invalido' %>">
+                CPF <%= resultado %>
+            </div>
+        <% } %>
+
+        <% if (cpfGerado) { %>
+            <div class="resultado valido">
+                CPF Gerado: <strong><%= cpfGerado %></strong>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
